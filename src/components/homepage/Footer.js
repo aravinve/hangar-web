@@ -37,17 +37,17 @@ function Footer({isShowMenu}) {
             &copy; Copyrights Reserved 2020
             </div>
         </div></>) : (<div className="w-full bg-primary h-12 fixed bottom-0">
-            <div className="p-2 text-white text-sm float-right">
-                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+            <div className="py-1 mt-2 text-white text-sm float-right">
+                    <a href="#" className="flex-shrink-0 bg-secondary rounded-md cursor-pointer text-primary text-base py-1 px-2 mr-2">
                         <i className='fab fa-facebook'></i>
                     </a>
-                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+                    <a href="#" className="flex-shrink-0 bg-secondary rounded-md cursor-pointer text-primary text-base py-1 px-2 mr-2">
                         <i className='fab fa-twitter'></i>
                     </a>
-                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+                    <a href="#" className="flex-shrink-0 bg-secondary rounded-md cursor-pointer text-primary text-base py-1 px-2 mr-2">
                         <i className='fab fa-instagram'></i>
                     </a>
-                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+                    <a href="#" className="flex-shrink-0 bg-secondary rounded-md cursor-pointer text-primary text-base py-1 px-2 mr-2">
                         <i className='fab fa-github'></i>
                     </a>
             </div>
