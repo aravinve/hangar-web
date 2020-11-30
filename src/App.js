@@ -1,8 +1,17 @@
+const { default: Footer } = require("./components/homepage/Footer");
+const { default: Header } = require("./components/homepage/Header");
+const { default: Hero } = require("./components/homepage/Hero");
+const { default: SectionOne } = require("./components/homepage/SectionOne");
+const { default: SectionTwo } = require("./components/homepage/SectionTwo");
+
 function App() {
   return (
-    <div className="p-10 text-3xl text-white bg-black dark:bg-white text-black">
-      <h1 className="text-5xl">Hangar</h1>
-      <p className="text-sm">All Your Apps In One Place</p>
+    <div className="w-screen h-screen overflow-auto">
+      <Header />
+      <Hero />
+      <SectionOne />
+      <SectionTwo />
+      <Footer />
     </div>
   );
 }
