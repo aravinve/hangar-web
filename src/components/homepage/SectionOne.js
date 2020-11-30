@@ -2,7 +2,7 @@ import about from './images/about.svg'
 
 function SectionOne() {
     return (
-        <div className="w-100 bg-secondary">
+        <div className="w-100 bg-secondary" id="about">
             <div className="lg:flex lg:flex-row md:flex-row sm:flex-col-reverse items-center p-8 justify-items-center text-center">
                 <div className="flex-1 p-2">
                     <img src={about} alt="About Drop" className="w-full h-80"/>

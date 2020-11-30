@@ -1,9 +1,9 @@
 import connect from './images/connect.svg'
 
-function Footer() {
+function Footer({isShowMenu}) {
     return (
         <>
-            <div className="w-100 bg-secondary">
+        {isShowMenu ? (<><div className="w-100 bg-secondary" id="connect">
             <div className="lg:flex lg:flex-row md:flex-row sm:flex-col items-center p-8 justify-items-center text-center">
                 <div className="flex-1">
                     <h2 className="select-none text-4xl my-4 text-primary">
@@ -32,11 +32,26 @@ function Footer() {
                 </div>
             </div>
         </div>
-        <div className="w-100 bg-primary h-12">
+        <div className="w-100 bg-primary h-10">
             <div className="p-2 text-white text-sm">
             &copy; Copyrights Reserved 2020
             </div>
-        </div>
+        </div></>) : (<div className="w-full bg-primary h-12 fixed bottom-0">
+            <div className="p-2 text-white text-sm float-right">
+                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+                        <i className='fab fa-facebook'></i>
+                    </a>
+                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+                        <i className='fab fa-twitter'></i>
+                    </a>
+                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+                        <i className='fab fa-instagram'></i>
+                    </a>
+                    <a href="#" className="flex-shrink-0 bg-primary cursor-pointer text-secondary text-base py-2 px-4 shadow-md mr-2">
+                        <i className='fab fa-github'></i>
+                    </a>
+            </div>
+        </div>)}
         </>
     )
 }

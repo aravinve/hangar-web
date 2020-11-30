@@ -1,6 +1,6 @@
 function SectionTwo() {
     return (
-        <div className="w-100 bg-secondary">
+        <div className="w-100 bg-secondary" id="features">
             <div className="flex-1 items-center py-4 justify-items-center text-center">
                 <h2 className="select-none text-4xl my-4 text-primary">
                     FEATURES
