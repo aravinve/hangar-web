@@ -3,6 +3,7 @@
 src/index.css
 .eslintcache
 .env
+debug.log
 
 # dependencies
 /node_modules

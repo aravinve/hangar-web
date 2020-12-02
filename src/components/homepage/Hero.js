@@ -15,8 +15,8 @@ function Hero() {
                         </h3>
                     </div>
                     <div className="mt-4 flex items-center">
-                        <Link to="/register" target="_blank" className="flex-shrink-0 bg-primary m-auto cursor-pointer text-secondary text-base py-2 px-4 rounded-lg shadow-md hover:bg-blue-900 focus:outline-none transform hover:scale-110">
-                            Register
+                        <Link to="/hangar" target="_blank" className="flex-shrink-0 bg-primary m-auto cursor-pointer text-secondary text-base py-2 px-10 rounded-lg shadow-md focus:outline-none">
+                            Join Now
                          </Link>
                     </div>
                 </div>

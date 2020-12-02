@@ -1,4 +1,4 @@
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 const { default: Homepage } = require("./components/homepage/Homepage");
 const { default: Auth } = require("./components/Auth/Auth");
 
@@ -11,7 +11,10 @@ function App() {
             <Homepage />
         </div>
       )} />
-      <Route exact path="/register" component={Auth} />
+      <Route exact path="/hangar" component={Auth} />
+      <Route exact path="/*" render={() => (
+        <Redirect to="/hangar" />
+      )} />
     </Switch>
     </BrowserRouter>
    
