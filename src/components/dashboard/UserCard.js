@@ -1,36 +1,42 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 import AppConfigComponent from './AppConfigComponent'
 import DashboardCard from './DashboardCard'
 import SettingsCard from './SettingsCard'
 import StepsCard from './StepsCard'
 
 
-function UserCard({displayName, photoUrl}) {
+function UserCard({displayName, photoUrl, email}) {
     const [openSettings, setOpenSettings] = useState(false)
     const [openDashboard, setOpenDashboard] = useState(false)
     const [showConfigureApp, setShowConfigureApp] = useState(false)
+    const [stepData, setStepData] = useState(null)
+
     const openDashboardFunction = () => {
         setOpenSettings(false)
         setOpenDashboard(true)
     }
+
     const openSettingsFunction = () => {
         setOpenDashboard(false)
         setOpenSettings(true)
     }
+
     const onBack = () => {
         setOpenDashboard(false)
         setOpenSettings(false)
     }
+
     const onConfigBack = () => {
         setShowConfigureApp(false)
     }
-    const configureHangar = (e) => {
-        console.log(e.target.id)
+
+    const configureHangar = (step) => {
+        setStepData(step)
         setShowConfigureApp(true)
     }
+
     return (
-    
-        showConfigureApp ? <AppConfigComponent onConfigBack={onConfigBack} /> : (<div className="flex xl:flex-row lg:flex-row md:flex-row flex-col bg-secondary h-90">
+        showConfigureApp ? <AppConfigComponent onConfigBack={onConfigBack} stepData={stepData} displayName={displayName} email={email} /> : (<div className="flex xl:flex-row lg:flex-row md:flex-row flex-col bg-secondary h-90">
         <div className="flex-1 flex flex-col bg-secondary items-center text-center rounded-l-md">
             <div className="flex-1 mt-6 mb-4">
                 <img className="select-none w-16 h-16 rounded-sm" src={photoUrl} alt="Profile DP" />

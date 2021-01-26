@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import hero from './images/hero.svg'
+import hero from '../../images/hero.svg'
 
 function Hero() {
     return (

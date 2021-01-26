@@ -1,9 +1,9 @@
 import {useState, useEffect} from 'react'
-import signup from './images/signup.svg'
-import avatar from './images/avatar.png'
+import signup from '../../images/signup.svg'
+import avatar from '../../images/avatar.png'
 import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth'
-const { default: Header } = require("../homepage/Header");
-const { default: Footer } = require("../homepage/Footer");
+const { default: Header } = require("../homepage/Header")
+const { default: Footer } = require("../homepage/Footer")
 const { default : UserCard} = require('../dashboard/UserCard')
 const { default: firebase} = require("./firebase")
 
@@ -11,6 +11,7 @@ function Signup() {
     const [signedIn, setSignedIn] = useState(false)
     const [userName, setUserName] = useState('')
     const [photoUrl, setPhotoUrl] = useState('')
+    const [email, setEmail] = useState('')
     const uiConfig = {
         signInFlow: 'popup',
         signInOptions: [
@@ -24,9 +25,9 @@ function Signup() {
     }
     useEffect(() => {
         firebase.auth().onAuthStateChanged(user => {
-            console.log(user)
             setSignedIn(!!user)
             if(!!user){
+                setEmail(firebase.auth().currentUser.email)
                 setUserName(firebase.auth().currentUser.displayName)
                 setPhotoUrl(firebase.auth().currentUser.photoURL !== null ? firebase.auth().currentUser.photoURL: avatar)
             }
@@ -42,7 +43,7 @@ function Signup() {
                             <img src={signup} alt="Hero Drop" className="w-full h-80"/>
                         </div>)}
                         <div className="flex-1 bg-primary rounded-none">
-                            {signedIn ? (<UserCard displayName={userName} photoUrl={photoUrl} />) : (
+                            {signedIn ? (<UserCard displayName={userName} photoUrl={photoUrl} email={email} />) : (
                                 <>
                                 <h3 className="select-none text-secondary text-center mt-8 text-4xl">
                                 Join Today!!!

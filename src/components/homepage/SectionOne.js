@@ -1,4 +1,4 @@
-import about from './images/about.svg'
+import about from '../../images/about.svg'
 
 function SectionOne() {
     return (

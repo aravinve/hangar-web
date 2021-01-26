@@ -1,4 +1,4 @@
-import connect from './images/connect.svg'
+import connect from '../../images/connect.svg'
 
 function Footer({isShowMenu}) {
     return (

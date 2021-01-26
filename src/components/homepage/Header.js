@@ -1,4 +1,4 @@
-import logo from './images/logo.png'
+import logo from '../../images/logo.png'
 import Menubar from './Menubar'
 const { default: firebase} = require("../Auth/firebase")
 

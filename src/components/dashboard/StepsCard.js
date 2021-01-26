@@ -1,4 +1,3 @@
-import React from 'react'
 import StepCard from './StepCard'
 
 function StepsCard({configureHangar}) {
@@ -8,13 +7,36 @@ function StepsCard({configureHangar}) {
     const personalList = ["News, Music, Cook, Gallery", "Clock, Calendar, Calculator, Dictionary", "Reddit, Wikipedia, Covid-19 Tracker"]
     const studentList = ["News, Music, Maps", "Clock, Calendar, Calculator, Dictionary, Notes, Todoist", "Wikipedia, Covid-19 Tracker"]
     const professionalList = ["News, Music, Cook, Maps, Weather, Gallery", "Clock, Calendar, Calculator, Converter, Dictionary, Notes, Todoist, Board", "Reddit, Wikipedia, Hackernews, Covid-19 Tracker"]
+    const stepsArray = [{
+        planName: "Personal",
+        planDays: "30",
+        tagsList: personalTags,
+        itemsList: personalList,
+        hangarCount: "4",
+        planCost: "99"
+    },
+    {
+        planName: "Student",
+        planDays: "30",
+        tagsList: studentTags,
+        itemsList: studentList,
+        hangarCount: "2",
+        planCost: "49"
+    },
+    {
+        planName: "Professional",
+        planDays: "30",
+        tagsList: professionalTags,
+        itemsList: professionalList,
+        hangarCount: "5",
+        planCost: "129"
+    }]
     return (
        <>
-            <StepCard key="H" planName="Personal" planDays="30"
-            tagsList={personalTags} hangarCount="4" planCost="99" id="H" onClick={configureHangar} />
-            <StepCard key="S" planName="Student" planDays="30" tagsList={studentTags} hangarCount="2" planCost="49" id="S" onClick={configureHangar} />
-            <StepCard key="P" planName="Professional" planDays="30" 
-            tagsList={professionalTags} hangarCount="5" planCost="129" id="P" onClick={configureHangar}/>
+            {stepsArray.map((step, index) => (
+                <StepCard key={index} planName={step.planName} planDays={step.planDays}
+                tagsList={step.tagsList} hangarCount={step.hangarCount} planCost={step.planCost} clickHandler={true} onClick={() => configureHangar(step)} />
+            ))}
        </>
     )
 }
