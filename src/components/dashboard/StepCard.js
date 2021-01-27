@@ -1,5 +1,5 @@
 
-function StepCard({planName, planDays, tagsList, hangarCount, planCost, clickHandler, onClick}) {
+function StepCard({planName, planDays, tagsList, hangarCount, planCost, clickHandler, onClick, activePlan}) {
     return (
         <div className={clickHandler ? 'p-1 m-4 rounded-md bg-secondary flex-1 text-center items-center shadow-md transform hover:scale-105' : 'px-4 py-2 m-4 rounded-md bg-secondary flex-1 text-center items-center shadow-md'}>
             <div className="select-none text-primary text-2xl mt-2">
@@ -19,9 +19,11 @@ function StepCard({planName, planDays, tagsList, hangarCount, planCost, clickHan
             <div className="select-none text-lg text-primary mt-2">
                 {'$ '.concat(planCost)}
             </div>
-            {clickHandler && (<div className="flex-shrink-0 bg-primary m-2 cursor-pointer text-secondary text-base py-2 px-10 rounded-lg shadow-md focus:outline-none" onClick={onClick}>
+            {clickHandler && !activePlan.selected ? (<div className="flex-shrink-0 bg-primary m-2 cursor-pointer text-secondary text-base py-2 px-10 rounded-lg shadow-md focus:outline-none" onClick={onClick}>
                 Select
-            </div>)}
+            </div>): clickHandler && activePlan.selected && activePlan.value === planName ? (<div className="flex-shrink-0 bg-primary m-2 cursor-pointer text-secondary text-base py-2 px-10 rounded-lg shadow-md focus:outline-none" onClick={onClick}>
+                <i className="fas fa-check-circle mx-1"></i>Active
+            </div>): null}
         </div>
     )
 }

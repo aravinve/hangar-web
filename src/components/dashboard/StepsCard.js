@@ -1,6 +1,6 @@
 import StepCard from './StepCard'
 
-function StepsCard({configureHangar}) {
+function StepsCard({configureHangar, activePlan}) {
     const personalTags = ["Limited Explore Features", "Basic Tools", "Limited Social Features", "Limited Storage & Downloads", "No Analytics/Monitoring"]
     const studentTags = ["Basic Explore Features", "Unlimited Tools", "Basic Social Features", "Limited Storage & Downloads", "No Analytics/Monitoring"]
     const professionalTags = ["Unlimited Explore Features", "Unlimited Tools", "Unlimited Social Features", "Unlimited Storage & Downloads", "Analytics/Monitoring"]
@@ -35,7 +35,7 @@ function StepsCard({configureHangar}) {
        <>
             {stepsArray.map((step, index) => (
                 <StepCard key={index} planName={step.planName} planDays={step.planDays}
-                tagsList={step.tagsList} hangarCount={step.hangarCount} planCost={step.planCost} clickHandler={true} onClick={() => configureHangar(step)} />
+                tagsList={step.tagsList} hangarCount={step.hangarCount} planCost={step.planCost} clickHandler={true} activePlan={activePlan} onClick={() => configureHangar(step)} />
             ))}
        </>
     )
