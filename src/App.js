@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
+const { default: Homepage } = require("./components/homepage/Homepage");
+const { default: Auth } = require("./components/Auth/Auth");
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+    <Switch>
+      <Route exact path="/" render={() => (
+         <div className="w-screen h-screen overflow-auto">
+            <Homepage />
+        </div>
+      )} />
+      <Route exact path="/hangar" component={Auth} />
+      <Route exact path="/*" render={() => (
+        <Redirect to="/hangar" />
+      )} />
+    </Switch>
+    </BrowserRouter>
+   
   );
 }
 
