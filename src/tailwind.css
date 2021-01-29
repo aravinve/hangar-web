@@ -20,6 +20,10 @@ h6 {
   font-family: 'Open Sans', sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .text-primary {
   color: var(--primary-color);
 }

@@ -12,7 +12,7 @@ function SectionTwo() {
                 </div>
             </div>
             <div className="lg:flex lg:flex-row md:flex-row sm:flex-col items-center py-4 px-2 justify-items-center text-center">
-                <div className="flex-1 bg-secondary h-80 rounded-md text-primary mx-2 my-2 lg:my-0 xl:my-0 md:mx-2 md:my-2 sm:my-2 sm:mx-2 shadow-md">
+                <div className="flex-1 bg-secondary h-56 rounded-md text-primary mx-2 my-2 lg:my-0 xl:my-0 md:mx-2 md:my-2 sm:my-2 sm:mx-2 shadow-md">
                     <h5 className="select-none text-xl text-secondary bg-primary py-1 rounded-t-md">
                         Explore
                     </h5>
@@ -25,7 +25,7 @@ function SectionTwo() {
                         ))}
                     </ul>
                 </div>
-                <div className="flex-1 bg-secondary h-80 rounded-md text-primary lg:my-0 xl:my-0 mx-2 my-2 md:mx-2 md:my-2 sm:my-2 sm:mx-2 shadow-md">
+                <div className="flex-1 bg-secondary h-56 rounded-md text-primary lg:my-0 xl:my-0 mx-2 my-2 md:mx-2 md:my-2 sm:my-2 sm:mx-2 shadow-md">
                     <h5 className="select-none text-xl text-secondary bg-primary py-1 rounded-t-md">
                         Tools
                     </h5>
@@ -38,7 +38,7 @@ function SectionTwo() {
                         ))}
                     </ul>
                 </div>
-                <div className="flex-1 bg-secondary h-80 rounded-md text-primary lg:my-0 xl:my-0 mx-2 my-2 md:mx-2 md:my-2 sm:my-2 sm:mx-2 shadow-md">
+                <div className="flex-1 bg-secondary h-56 rounded-md text-primary lg:my-0 xl:my-0 mx-2 my-2 md:mx-2 md:my-2 sm:my-2 sm:mx-2 shadow-md">
                     <h5 className="select-none text-xl text-secondary bg-primary py-1 rounded-t-md">
                         Social
                     </h5>

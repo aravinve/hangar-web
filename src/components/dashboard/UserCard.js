@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useRef} from 'react'
 import AppConfigComponent from './AppConfigComponent'
 import DashboardCard from './DashboardCard'
 import SettingsCard from './SettingsCard'
@@ -20,6 +20,7 @@ function UserCard({displayName, photoUrl, email}) {
     const [hangarData, setHangarData] = useState([])
     const [dataId, setDataId] = useState(null)
     const [alert, setAlert] = useState('')
+    const downloaderButton = useRef({})
 
     const resetAlert = () => {
         setTimeout(() => {
@@ -157,6 +158,10 @@ function UserCard({displayName, photoUrl, email}) {
         setShowConfigureApp(true)
     }
 
+    const downloadApp = () => {
+        downloaderButton.current.click()
+    }
+
     return (
         showConfigureApp ? <AppConfigComponent onConfigBack={onConfigBack} stepData={stepData} hangarData={hangarData} alert={alert} submitHandler={submitHandler} handleHangarDataChange={handleHangarDataChange} /> : (<div className="flex xl:flex-row lg:flex-row md:flex-row flex-col bg-secondary h-90">
         <div className="flex-1 flex flex-col bg-secondary items-center rounded-l-md">
@@ -168,11 +173,12 @@ function UserCard({displayName, photoUrl, email}) {
             </div>
             <div className="flex-1 mt-2 mb-4">
                 <div className="flex-shrink-0 bg-secondary m-2 cursor-pointer text-primary text-base py-2 px-10 rounded-lg shadow-lg focus:outline-none">
-                    <div className="inline-flex items-center justify-center">
+                    <div className="inline-flex items-center justify-center" onClick={downloadApp}>
                     <img src={logo} alt="Hangar Logo" className="w-4 h-4 mx-2 flex-initial"/>
                     <span>Get Desktop App</span>
                     </div>
                 </div>
+                <a ref={downloaderButton} href="https://github.com/aravinve/hangar/releases/download/V1.0/hangar-1.0.zip" download hidden></a>
                 <div className="flex-shrink-0 bg-secondary m-2 cursor-pointer text-primary text-base py-2 px-10 rounded-lg shadow-lg focus:outline-none" onClick={openDashboardFunction}>
                     <i className="fas fa-border-all mx-2"></i>Dashboard
                 </div>
