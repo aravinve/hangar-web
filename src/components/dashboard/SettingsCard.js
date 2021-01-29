@@ -1,4 +1,4 @@
-import React from 'react'
+import constructionImage from '../../images/under_construction_light.png'
 
 function SettingsCard({onBack}) {
     return (
@@ -8,11 +8,16 @@ function SettingsCard({onBack}) {
                 Back
             </span>
         </div>
-        <div className="flex mt-4 p-2 text-secondary">
-            
+        <div className="flex flex-col mt-4 p-2 text-secondary">
         <h3 className="text-secondary text-2xl">
             Settings
         </h3>
+        <div className="flex flex-col items-center justify-center">
+            <div className="text-secondary text-lg my-2">
+                Under Construction
+            </div>
+            <img src={constructionImage} className='rounded-md shadow-md my-2' alt="Construction" style={{width: '80%', height: '250px'}} />
+        </div>
         </div>
         </>
     )

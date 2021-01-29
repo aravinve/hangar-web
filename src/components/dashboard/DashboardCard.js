@@ -1,4 +1,4 @@
-
+import constructionImage from '../../images/under_construction_light.png'
 
 function DashboardCard({onBack}) {
     return (
@@ -12,6 +12,12 @@ function DashboardCard({onBack}) {
         <h3 className="text-secondary text-2xl">
             Dashboard
         </h3>
+        <div className="flex flex-col items-center justify-center">
+            <div className="text-secondary text-lg my-2">
+                Under Construction
+            </div>
+            <img src={constructionImage} className='rounded-md shadow-md my-2' alt="Construction" style={{width: '80%', height: '250px'}} />
+        </div>
         </div>
         </>
     )
