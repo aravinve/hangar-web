@@ -9,7 +9,7 @@ function Header({isShowMenu, signedIn}) {
             <div className="flex-1 p-1 ml-2">
                 <div className="flex">
                 <img src={logo} alt="Hangar Logo" className="w-10 h-10 flex-initial"/>
-                <p className="select-none text-3xl text-primary flex-1 m-1 text-justify tracking-wider space-y-2">anger</p>
+                <p className="select-none text-3xl text-primary flex-1 m-1 text-justify tracking-wider space-y-2">angar</p>
                 </div>
             </div>
            {isShowMenu ? <Menubar /> : null}
